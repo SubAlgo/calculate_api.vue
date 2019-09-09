@@ -1,5 +1,26 @@
 <template>
-  <div class="about">
-    <h1>This is an about page</h1>
+  <div>
+    My name is <input v-model="name">
   </div>
 </template>
+
+<script>
+export default {
+  data ()  {
+    return {
+      name: ''
+    }
+  },
+  mounted() {
+    if (localStorage.name) {
+      this.name = localStorage.name;
+    }
+  },
+  watch:{
+    name(newName) {
+      localStorage.name = newName;
+    }
+  }
+}
+</script>
+
