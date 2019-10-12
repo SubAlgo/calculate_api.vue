@@ -1,8 +1,9 @@
 <template>
   <div class="blog-post">
       <h3>{{ post.title }}</h3>
-      <p>{{ post.name }}</p>
-      <input type="text" v-bind:value="post.name" name="" id="">
+      <button v-on:click="$emit('enlarge-text')">
+        Enlarge text
+      </button>
       <div v-html="post.name"></div>
     </div>
 </template>

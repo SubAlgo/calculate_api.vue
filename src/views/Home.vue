@@ -1,5 +1,5 @@
 <template>
-  <div class="home">
+  <div class="home" :style="{ fontSize: postFontSize + 'em' }">
     <img alt="Vue logo" src="../assets/logo.png">
     <HelloWorld msg="Welcome to Your Vue.js App"/>
     <blogPost v-bind:title="text"/>
@@ -7,6 +7,7 @@
       v-for="post in posts"
       v-bind:key="post.id"
       v-bind:post="post"
+      v-on:enlarge-text="postFontSize += 0.1"
     ></bp>
   </div>
 </template>
@@ -31,7 +32,8 @@ export default {
         { id: 1, title: 'My journey with Vue', name: 'korn' },
         { id: 2, title: 'Blogging with Vue', name: 'vala' },
         { id: 3, title: 'Why Vue is so fun', name: 'GG WP' }
-      ]
+      ],
+      postFontSize: 1
     }
   }
 }
