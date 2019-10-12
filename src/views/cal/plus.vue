@@ -45,13 +45,13 @@ export default {
     },
     showList () {
       this.$api.cal.showList(this.n1, this.n2)
-        .then((res) => [
-          console.log(res.list[0]['name']),
+        .then((res) => {
+          console.log(res.list[0]['name'])
           // alert(res.list[0]['name']),
           // this.re = res.list[0]['name'],
-          this.users = res.list,
+          this.users = res.list
           console.log(this.users)
-        ])
+        })
         .catch((err) => {
           console.log(err)
         })
